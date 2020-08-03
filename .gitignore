@@ -269,4 +269,5 @@ $RECYCLE.BIN/
 ./dist
 ./build
 ./out
+./vscode
 ./data
