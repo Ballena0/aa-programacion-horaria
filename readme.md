@@ -17,7 +17,8 @@ Para esta prueba se han disponibilizado las siguientes salas de clases:
 - M2-202
 - M2-203
 - M2-204
-- M2-205Bloques Horarios.
+- M2-205
+Bloques Horarios.
 Para esta semana de pruebas, se ha definido un conjunto de períodos especiales, para facilitar
 las evaluaciones, estos bloques son:
 - Período 1​ de 08:00 a 09:25 horas (Mañana).
@@ -74,12 +75,7 @@ donde cada archivo debe corresponder a una sala de clases (en total 5 archivos).
     - 7
     - 8
 Ejemplo Visual
-Período
-Lunes
-Martes
-Miércoles
-Jueves
-Viernes
+Período, Lunes , Martes, Miércoles, Jueves, Viernes
 1
 2
 3

@@ -1,0 +1,8 @@
+1, 08:00 a 09:25 horas (Mañana)
+2, 09:30 a 10:55 horas (Mañana)
+3, 11:00 a 12:25 horas (Mañana)
+4, 12:30 a 13:55 horas (Mañana)
+5, 14:00 a 15:25 horas (Tarde)
+6, 15:30 a 16:55 horas (Tarde)
+7, 17:00 a 18:25 horas (Tarde)
+8, 18:30 a 20:00 horas (Tarde)
