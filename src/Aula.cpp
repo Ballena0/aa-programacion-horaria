@@ -1,6 +1,11 @@
 #include "../include/Aula.hpp"
 
-Aula::Aula() {}
+Aula::Aula() {
+    map<int, string> periodos;
+
+    nombreSala = "";
+    periodos = periodos;    
+}
 
 Aula::~Aula() {}
 

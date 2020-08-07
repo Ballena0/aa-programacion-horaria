@@ -1,6 +1,9 @@
 #include "../include/Asignatura.hpp"
 
-Asignatura::Asignatura() {}
+Asignatura::Asignatura() {
+    nivel = 0;
+    nombre = "";
+}
 
 Asignatura::~Asignatura() {}
 

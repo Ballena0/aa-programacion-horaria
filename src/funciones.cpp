@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <vector>
 #include "../include/funciones.hpp"  
 
 vector<string> split(string str, char delimitador) {
@@ -23,7 +21,8 @@ vector<Carrera> generarCarreras(string datos) {
   for (string linea; getline(entrada, linea);)
   {
     vector<string> arreglo = split(linea, ';');
-    Carrera carrera = Carrera(stoi(arreglo.at(1)));
+    int codigoCarrera = stoi(arreglo[0]);
+    Carrera carrera = Carrera(codigoCarrera);
     if(!carrera.exist(carreras)){
       carreras.push_back(carrera);
     }else{
@@ -34,14 +33,17 @@ vector<Carrera> generarCarreras(string datos) {
 }
 
 vector<Carrera> generarAsignaturas(string datos) {
+  ifstream entrada(datos);
+
   vector<Carrera> carreras = generarCarreras(datos);
   vector<Asignatura> asignaturas;
-  ifstream entrada(datos);
   for(string linea; getline(entrada, linea);){
     vector<string> arreglo = split(linea, ';');
-    Asignatura asignatura = Asignatura(stoi(arreglo.at(0)), arreglo.at(2));
+    int nivel = stoi(arreglo[0]);
+    int codigo = stoi(arreglo[1]);
+    Asignatura asignatura = Asignatura(nivel, arreglo.at(2));
     for(unsigned int i = 0; i < carreras.size(); i++){
-      if(stoi(arreglo.at(1)) == carreras.at(i).codigoCarrera){
+      if(codigo == carreras.at(i).codigoCarrera){
         carreras.at(i).asignaturas.push_back(asignatura);
       }
       else{
@@ -60,7 +62,8 @@ vector<Aula> generarSalas(string aulas, string periodos){
       map<int, string> per;
     for(string linea2; getline(horas, linea);){
       vector<string> arreglo = split(linea, ',');
-      per.insert(pair<int, string>(stoi(arreglo.at(0)), arreglo.at(1)));
+      int periodo = stoi(arreglo[0]);
+      per.insert(pair<int, string>(periodo, arreglo.at(1)));
     }
     Aula sala = Aula(linea, per);
     ss.push_back(sala);

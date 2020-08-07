@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <algorithm>
 #include <string>
+#include <stdio.h>
 
 #include "Carrera.hpp"
 #include "Asignatura.hpp"

@@ -16,6 +16,7 @@ using namespace std;
 #define rutaSalas "data/salas.txt"
 #define rutaPeriodos "data/periodos.txt"
 #define dias "Período, Lunes , Martes, Miércoles, Jueves, Viernes"
+#define cantidad_dias 5
 
 /**
  * Taller computacional
@@ -74,5 +75,5 @@ void escribirResultado(string rutaSalida)
   string archivo = rutaSalida + "horario.csv";
   ofstream salida(archivo, fstream::app);
   salida << dias << endl;
-  //periodo, 1l, 1m, 1mi, 1j, 1v
+  //periodo, 1l, 1m, 1mi, 1j, 1v ...
 }

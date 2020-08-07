@@ -5,7 +5,12 @@ Carrera::Carrera(int _codigo) {
     codigoCarrera = _codigo;
 }
 
-Carrera::~Carrera() {}
+Carrera::~Carrera() {
+    vector<Asignatura> asignatura;
+    
+    codigoCarrera = 0;
+    asignaturas = asignatura;
+}
 
 Carrera::Carrera(int _codigo, vector<Asignatura> _asignaturas)
 {
