@@ -4,6 +4,7 @@
 #include <chrono>
 #include <fstream>
 #include <vector>
+#include <sstream>
 
 #include "include/Asignatura.hpp"
 #include "include/Aula.hpp"
@@ -34,14 +35,14 @@ int main(int argc, char **argv)
 
   auto start = chrono::system_clock::now();
 
-  if (existeArchivo(rutaRamos))
+  if (existeArchivo(rutaRamos) && existeArchivo(rutaSalas) && existeArchivo(rutaPeriodos))
   {
     vector<Aula> salas = generarSalas(rutaSalas, rutaPeriodos);
     vector<Carrera> carrerasCompletas = generarAsignaturas(rutaRamos);
     //algoritmo de asignacion
 
     //escribir csv
-    escribirResultado(argv[1]);
+    //escribirResultado(argv[1]);
 
   }else{
     cout << "Archivo no existe" << endl;

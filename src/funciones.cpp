@@ -21,7 +21,8 @@ vector<Carrera> generarCarreras(string datos) {
   for (string linea; getline(entrada, linea);)
   {
     vector<string> arreglo = split(linea, ';');
-    int codigoCarrera = stoi(arreglo[0]);
+    string carrera_ = arreglo[1].substr(1, arreglo[1].size()-1);
+    int codigoCarrera = stoi(carrera_);
     Carrera carrera = Carrera(codigoCarrera);
     if(!carrera.exist(carreras)){
       carreras.push_back(carrera);
@@ -29,6 +30,7 @@ vector<Carrera> generarCarreras(string datos) {
       continue;
     }
   }
+  cout << "carreras creadas" << endl;
   return carreras;
 }
 
@@ -39,8 +41,8 @@ vector<Carrera> generarAsignaturas(string datos) {
   vector<Asignatura> asignaturas;
   for(string linea; getline(entrada, linea);){
     vector<string> arreglo = split(linea, ';');
-    int nivel = stoi(arreglo[0]);
-    int codigo = stoi(arreglo[1]);
+    int nivel = stoi(arreglo[0].substr(1, arreglo[0].size()-1));
+    int codigo = stoi(arreglo[1].substr(1, arreglo[1].size()-1));
     Asignatura asignatura = Asignatura(nivel, arreglo.at(2));
     for(unsigned int i = 0; i < carreras.size(); i++){
       if(codigo == carreras.at(i).codigoCarrera){

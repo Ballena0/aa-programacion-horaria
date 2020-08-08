@@ -7,7 +7,7 @@ Carrera::Carrera(int _codigo) {
 
 Carrera::~Carrera() {
     vector<Asignatura> asignatura;
-    
+
     codigoCarrera = 0;
     asignaturas = asignatura;
 }
