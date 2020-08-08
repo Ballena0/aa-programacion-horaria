@@ -5,6 +5,7 @@
 #include <fstream>
 #include <iostream>
 #include <map>
+#include <random>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -19,3 +20,6 @@ vector<string> split(string, char);
 vector<Carrera> generarCarreras(string);
 vector<Carrera> generarAsignaturas(string);
 vector<Aula> generarSalas(string, string);
+int random(int, int);
+vector<Aula> salasLlenas(vector<Aula>, vector<Carrera>);
+void imprimirSalas(vector<Aula>);
