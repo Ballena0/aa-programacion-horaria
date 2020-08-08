@@ -37,8 +37,11 @@ int main(int argc, char **argv)
 
   if (existeArchivo(rutaRamos) && existeArchivo(rutaSalas) && existeArchivo(rutaPeriodos))
   {
-    vector<Aula> salas = generarSalas(rutaSalas, rutaPeriodos);
+    vector<Aula> s = generarSalas(rutaSalas, rutaPeriodos);
     vector<Carrera> carrerasCompletas = generarAsignaturas(rutaRamos);
+    cout << "carreras creadas" << endl;
+    vector<Aula> salasCompletas_ = salasLlenas(s, carrerasCompletas);
+    imprimirSalas(salasCompletas_);
     //algoritmo de asignacion
 
     //escribir csv

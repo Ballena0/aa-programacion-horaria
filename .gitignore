@@ -262,7 +262,6 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,visualstudiocode,c,c++,cmake,premake-gmake,clion+all
 
 # Todos los .csv menos el admision.csv
-*.csv
 !**/admision.csv
 
 # Carpetas innecesarias

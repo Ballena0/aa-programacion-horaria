@@ -7,6 +7,8 @@
 #include <algorithm>
 #include <string>
 #include <stdio.h>
+#include <random>
+
 
 #include "Carrera.hpp"
 #include "Asignatura.hpp"
@@ -20,4 +22,7 @@ vector<string> split(string, char);
 vector<Carrera> generarCarreras(string);
 vector<Carrera> generarAsignaturas(string);
 vector<Aula> generarSalas(string, string);
+int random(int, int);
+vector<Aula> salasLlenas(vector<Aula>, vector<Carrera>);
+void imprimirSalas(vector<Aula>);
 
