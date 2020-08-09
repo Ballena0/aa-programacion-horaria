@@ -30,7 +30,7 @@ vector<Carrera> generarCarreras(string datos) {
       continue;
     }
   }
-  cout << "carreras creadas" << endl;
+  cout << "Carreras creadas correctamente" << endl;
   return carreras;
 }
 
@@ -86,7 +86,7 @@ vector<Aula> generarSalas2(string aulas){
     for(int i = 0; i < 6; i++){
       for(int j = 0;j<8;j++){
         if(i==0){
-          per[i][j] = std::to_string(j+1);
+          per[i][j] = '"'+std::to_string(j+1)+'"';
         }else{
           per[i][j] = "";
         }
@@ -222,3 +222,19 @@ vector<int> indicesAsignatura(vector<Asignatura> asignaturas,std::string nombre_
   return indices;
 }
 
+
+void generarCsv(Aula sala){
+  std::string primera_linea = "Período;Lunes;Martes;Miércoles;Jueves;Viernes";
+  ofstream myFile;
+  myFile.open("data/aulas/"+sala.nombreSala+".csv");
+  for(int j = 0; j < 8; j++){
+      for(int i = 0;i<6;i++){
+        if(i==0 && j==0){
+          myFile << primera_linea << endl;
+        }
+        //std::cout << sala.periodos.at(i).at(j) << " | ";
+        myFile << sala.periodos.at(i).at(j) << ";";    
+      }
+      myFile << endl;
+    }
+}

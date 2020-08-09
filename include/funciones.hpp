@@ -17,7 +17,7 @@
 using namespace std;
 
 vector<string> split(string, char);
-vector<Carrera> generarCarreras(string);
+vector<Carrera> generarCarreras(string);    
 vector<Carrera> generarAsignaturas(string);
 vector<Aula> generarSalas(string, string);
 vector<Aula> generarSalas2(string);
@@ -29,3 +29,4 @@ vector<Aula> aulasDisponibles(vector<Aula>, int, int);
 vector<int> mismoPeriodoLibre(vector<Aula>, int);
 std::string mayorCantidadSecciones(std::map<std::string, int>);
 vector<int> indicesAsignatura(vector<Asignatura> ,std::string );
+void generarCsv(Aula);
