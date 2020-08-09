@@ -12,9 +12,11 @@ class Asignatura{
     public:
         int nivel;
         string nombre;
+        bool con_aula = false;
+        int codigo;
         Asignatura();
         ~Asignatura();
-        Asignatura(int, string);
+        Asignatura(int, string, int);
 };
 
 
