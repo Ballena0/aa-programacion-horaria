@@ -1,38 +1,32 @@
-#include "../include/funciones.hpp"
+#include "../include/funciones.hpp"  
 
-vector<string> split(string str, char delimitador)
-{
-  vector<string> result;
+vector<string> split(string str, char delimitador) {
+    vector<string> result;
 
-  stringstream ss(str);
+    stringstream ss(str);
 
-  while (ss.good())
-  {
-    string substr;
-    getline(ss, substr, delimitador);
-    result.push_back(substr);
-  }
+    while (ss.good()) {
+        string substr;
+        getline(ss, substr, delimitador);
+        result.push_back(substr);
+    }
 
-  return result;
+    return result;
 }
 
-vector<Carrera> generarCarreras(string datos)
-{
+vector<Carrera> generarCarreras(string datos) {
   vector<Carrera> carreras;
 
   ifstream entrada(datos);
   for (string linea; getline(entrada, linea);)
   {
     vector<string> arreglo = split(linea, ';');
-    string carrera_ = arreglo[1].substr(1, arreglo[1].size() - 1);
+    string carrera_ = arreglo[1].substr(1, arreglo[1].size()-1);
     int codigoCarrera = stoi(carrera_);
     Carrera carrera = Carrera(codigoCarrera);
-    if (!carrera.exist(carreras))
-    {
+    if(!carrera.exist(carreras)){
       carreras.push_back(carrera);
-    }
-    else
-    {
+    }else{
       continue;
     }
   }
@@ -40,14 +34,12 @@ vector<Carrera> generarCarreras(string datos)
   return carreras;
 }
 
-vector<Carrera> generarAsignaturas(string datos)
-{
+vector<Carrera> generarAsignaturas(string datos) {
   ifstream entrada(datos);
 
   vector<Carrera> carreras = generarCarreras(datos);
   vector<Asignatura> asignaturas;
-  for (string linea; getline(entrada, linea);)
-  {
+  for(string linea; getline(entrada, linea);){
     vector<string> arreglo = split(linea, ';');
     int nivel = stoi(arreglo[0].substr(1, arreglo[0].size()-1));
     int codigo = stoi(arreglo[1].substr(1, arreglo[1].size()-1));
@@ -56,8 +48,7 @@ vector<Carrera> generarAsignaturas(string datos)
       if(codigo == carreras.at(i).codigoCarrera){
         carreras.at(i).asignaturas.push_back(asignatura);
       }
-      else
-      {
+      else{
         continue;
       }
     }
@@ -84,16 +75,7 @@ vector<Aula> generarSalas(string aulas){
     ss.push_back(sala);
   }
   return ss;
-}
 
-int random(int a, int b)
-{
-  int aux;
-  std::random_device rd;
-  std::mt19937 e{rd()};
-  std::uniform_int_distribution<int> dist{a, b};
-  aux = dist(e);
-  return aux;
 }
 
 vector<Asignatura> asignaturasSinAula(std::vector<Carrera> carreras){

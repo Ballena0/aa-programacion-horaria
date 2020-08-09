@@ -36,19 +36,10 @@ int main(int argc, char **argv)
 
   if (existeArchivo(rutaRamos) && existeArchivo(rutaSalas) && existeArchivo(rutaPeriodos))
   {
-<<<<<<< HEAD
-    vector<Aula> s = generarSalas(rutaSalas, rutaPeriodos);
-    vector<Carrera> carrerasCompletas = generarAsignaturas(rutaRamos);
-    cout << "carreras creadas" << endl;
-    vector<Aula> salasCompletas_ = salasLlenas(s, carrerasCompletas);
-    imprimirSalas(salasCompletas_);
-    //algoritmo de asignacion
-=======
     //vector<Aula> salas = generarSalas(rutaSalas, rutaPeriodos);
     // cada Aula tiene nombreSala y periodos que es un vector donde [dia][periodo]
     vector<Aula> salas = generarSalas(rutaSalas);
     vector<Carrera> carreras = generarAsignaturas(rutaRamos);
->>>>>>> seidev
 
     // Vector que revisa cuales son las asignaturas actualmente sin aula
     vector<Asignatura> asignaturas_sin_aula = asignaturasSinAula(carreras);

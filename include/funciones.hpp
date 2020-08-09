@@ -1,18 +1,18 @@
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <cstdlib>
+#include <algorithm>
+#include <string>
 #include <stdio.h>
 
-#include <algorithm>
-#include <cstdlib>
-#include <fstream>
-#include <iostream>
-#include <map>
-#include <random>
-#include <sstream>
-#include <string>
-#include <vector>
-
+#include "Carrera.hpp"
 #include "Asignatura.hpp"
 #include "Aula.hpp"
-#include "Carrera.hpp"
+
+#include "omp.h"
 
 using namespace std;
 
