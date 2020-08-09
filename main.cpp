@@ -38,7 +38,7 @@ int main(int argc, char **argv)
   {
     //vector<Aula> salas = generarSalas(rutaSalas, rutaPeriodos);
     // cada Aula tiene nombreSala y periodos que es un vector donde [dia][periodo]
-    vector<Aula> salas = generarSalas2(rutaSalas);
+    vector<Aula> salas = generarSalas(rutaSalas);
     vector<Carrera> carreras = generarAsignaturas(rutaRamos);
 
     // Vector que revisa cuales son las asignaturas actualmente sin aula
@@ -90,6 +90,7 @@ int main(int argc, char **argv)
     //salas.at(4).imprimirPeriodos();
 
     // Escribir csv
+
     for(unsigned int i=0; i<salas.size(); i++){
       generarCsv(salas.at(i));
     }

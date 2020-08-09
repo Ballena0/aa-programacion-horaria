@@ -56,29 +56,8 @@ vector<Carrera> generarAsignaturas(string datos) {
   return carreras;
 }
 
-//vector<Aula> generarSalas(string aulas, string periodos){
-//  vector<Aula> ss;
-//  ifstream salas(aulas);
-//  ifstream horas(periodos);
-//  int cont=0;
-//  for(string linea; getline(salas, linea);){
-//      map<int, string> per;
-//    for(string linea2; getline(horas, linea2);){
-//      vector<string> arreglo = split(linea2, ',');
-//      int periodo = stoi(arreglo[0]);
-//      per.insert(pair<int, string>(periodo, arreglo.at(1)));
-//    }
-//    cont++;
-//    horas.clear();
-//    horas.seekg(0);
-//    Aula sala = Aula(linea, per);
-//    ss.push_back(sala);
-//  }
-//  return ss;
-//
-//}
 
-vector<Aula> generarSalas2(string aulas){
+vector<Aula> generarSalas(string aulas){
   vector<Aula> ss;
   ifstream salas(aulas);
   for(string linea; getline(salas, linea);){
